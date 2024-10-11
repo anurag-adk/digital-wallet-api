@@ -1,27 +1,30 @@
 {
-  "name": "digital-wallet-api",
-  "version": "1.0.0",
-  "description": "A simple API for managing digital transactions, user accounts and secure payments, functioning like a digital wallet or banking app",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/anurag-adk/digital-wallet-api.git"
-  },
-  "author": "Anurag Adhikari",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/anurag-adk/digital-wallet-api/issues"
-  },
-  "homepage": "https://github.com/anurag-adk/digital-wallet-api#readme",
-  "dependencies": {
-    "dotenv": "^16.4.5",
-    "express": "^4.21.1",
-    "mongoose": "^8.7.1"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.7"
-  }
+    "name": "digital-wallet-api",
+    "version": "1.0.0",
+    "description": "A simple API for managing digital transactions, user accounts and secure payments, functioning like a digital wallet or banking app",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node app.js",
+        "dev": "nodemon app.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/anurag-adk/digital-wallet-api.git"
+    },
+    "author": "Anurag Adhikari",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/anurag-adk/digital-wallet-api/issues"
+    },
+    "homepage": "https://github.com/anurag-adk/digital-wallet-api#readme",
+    "dependencies": {
+        "dotenv": "^16.4.5",
+        "express": "^4.21.1",
+        "mongoose": "^8.7.1"
+    },
+    "devDependencies": {
+        "nodemon": "^3.1.7",
+        "prettier": "3.3.3"
+    }
 }
