@@ -2,4 +2,4 @@
 
 ## 👷🚧🛠️🔜🏗️
 
-## ![Typing SVG](https://readme-typing-svg.demolab.com?font=roboto&pause=1000&color=00FF8E&width=435&lines=Under+Construction+.+.+.)
+## ![Typing SVG](https://readme-typing-svg.demolab.com?font=roboto&pause=1000&color=36BCF7FF&width=435&lines=Under+Construction+.+.+.)
