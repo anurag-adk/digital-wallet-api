@@ -1,5 +1,19 @@
 const mongoose = require('mongoose');
 
+const isUnique = async (field, value) => {
+    const query = {};
+    query[field] = value;
+    try {
+        const existingUser = await mongoose.model('users').findOne(query);
+        return !existingUser;
+    } catch (err) {
+        res.status(400).json({
+            status: 'Failed',
+            message: err.message,
+        });
+    }
+};
+
 const userSchema = new mongoose.Schema(
     {
         name: {
@@ -9,12 +23,22 @@ const userSchema = new mongoose.Schema(
         username: {
             type: String,
             required: [true, 'Username cannot be empty'],
-            unique: true,
+            validate: {
+                validator: async (value) => {
+                    return await isUnique('username', value);
+                },
+                message: 'Username is already in use',
+            },
         },
         email: {
             type: String,
             required: [true, 'Email cannot be empty'],
-            unique: true,
+            validate: {
+                validator: async (value) => {
+                    return await isUnique('email', value);
+                },
+                message: 'Email is already in use',
+            },
         },
         password: {
             type: String,
