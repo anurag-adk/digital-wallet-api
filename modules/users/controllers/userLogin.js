@@ -1,12 +1,13 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 const userLogin = async (req, res) => {
     const users = mongoose.model('users');
     const { email, password } = req.body;
 
     try {
-        if (!email) throw 'Please provide an email or username!';
+        if (!email) throw 'Please provide email!';
         if (!password) throw 'Please provide password!';
 
         const getUser = await users.findOne({ email });
@@ -24,9 +25,24 @@ const userLogin = async (req, res) => {
         });
         return;
     }
+
+    //All is well
+    const getUserForAccessToken = await users.findOne({ email });
+
+    const accessToken = jwt.sign(
+        {
+            email: getUserForAccessToken.email,
+            username: getUserForAccessToken.username,
+            name: getUserForAccessToken.name,
+        },
+        process.env.secret_salt,
+        { expiresIn: '3 days' }
+    );
+
     res.status(200).json({
         status: 'Success',
         message: 'User Logged In',
+        accessToken,
     });
 };
 
