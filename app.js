@@ -13,6 +13,7 @@ app.use(express.json());
 
 //Models...
 require('./models/user.model');
+require('./models/transactions.model');
 
 mongoose
     .connect(db_conn, {})
