@@ -26,6 +26,7 @@ const userSchema = new mongoose.Schema(
         balance: {
             type: Number,
             required: [true, 'Balance cannot be empty'],
+            min: [0, 'Balance cannot be -ve'],
         },
     },
     {

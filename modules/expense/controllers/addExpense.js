@@ -6,19 +6,17 @@ const addExpense = async (req, res) => {
     const { amount, remarks } = req.body;
 
     //Validations are in schema...
-    // try {
-    //     if (!amount) throw 'Amount cannot be empty';
-    //     if (amount < 10) throw 'Transactions of less than Rs.10 is not allowed';
-    //     if (!remarks) throw 'Remarks cannot be empty';
-    //     if (remarks.length < 3)
-    //         throw 'Remarks must be at least 3 character long';
-    // } catch (err) {
-    //     res.status(400).json({
-    //         status: 'Failed',
-    //         message: err,
-    //     });
-    //     return;
-    // }
+    try {
+        const account = await user.findById(req.user._id).select('balance');
+        // console.log(account);
+        if (account.balance < amount) throw 'Insufficient Balance';
+    } catch (err) {
+        res.status(400).json({
+            status: 'Failed',
+            message: err,
+        });
+        return;
+    }
 
     //All is well...
 
