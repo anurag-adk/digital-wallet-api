@@ -11,7 +11,7 @@ userRouter.post('/login', userLogin);
 
 //Protected routes...
 
-userRouter.use(auth);
-userRouter.get('/dashboard', userDashboard);
+// userRouter.use(auth);
+userRouter.get('/dashboard', auth, userDashboard);
 
 module.exports = userRouter;

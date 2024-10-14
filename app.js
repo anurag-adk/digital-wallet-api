@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const userRouter = require('./modules/users/user.routes');
+const incomeRouter = require('./modules/income/income.routes');
 require('dotenv').config();
 
 const PORT = process.env.PORT;
@@ -23,6 +24,7 @@ mongoose
 
 //Routes...
 app.use('/api/user', userRouter);
+app.use('/api/income', incomeRouter);
 
 app.listen(PORT, () => {
     console.log(`Server started at port: ${PORT}`);
