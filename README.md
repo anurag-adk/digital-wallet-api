@@ -47,13 +47,13 @@ npm start
 
 ### API Endpoints
 
-| Method | Endpoint              | Description                            |
-| ------ | --------------------- | -------------------------------------- |
-| POST   | `/api/user/register`  | Register a new user                    |
-| POST   | `/api/user/login`     | User login and bearer token generation |
-| GET    | `/api/user/dashboard` | View latest 5 transactions (protected) |
-| PATCH  | `/api/income/add`     | Add a new income entry (protected)     |
-| PATCH  | `/api/expense/add`    | Add a new expense entry (protected)    |
+| Method | Endpoint              | Description                                             |
+| ------ | --------------------- | ------------------------------------------------------- |
+| POST   | `/api/user/register`  | Register a new user                                     |
+| POST   | `/api/user/login`     | User login and bearer token generation                  |
+| GET    | `/api/user/dashboard` | View your balance and latest 5 transactions (protected) |
+| PATCH  | `/api/income/add`     | Add a new income entry (protected)                      |
+| PATCH  | `/api/expense/add`    | Add a new expense entry (protected)                     |
 
 ### Contact
 
